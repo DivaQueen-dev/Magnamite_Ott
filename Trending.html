@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAGNEMITE</title>
+    <link rel="icon" href="img/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="trending.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg transparent" id="navbar">
+        <div class="container">
+            <a class="navbar-brand text-danger fw-bold" href="#"style="font-size: 25px;">MAGNEMITE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="ott.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ott.html#tv">TV Series</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ott.html#movies">Movies</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Profiles
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="profileDropdown">
+                            <li class="dropdown-item user-profile">
+                                <div class="d-flex align-items-center">
+                                    <div class="profile-avatar">
+                                        <img src="img/profiles.jpg" alt="Profile">
+                                    </div>
+                                    <div class="ms-2">Asritha</div>
+                                </div>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle me-2"></i>Manage Profiles</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Account Settings</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-list me-2"></i>My Watchlist</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-history me-2"></i>Recently Watched</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i>Sign Out</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="Trending.html">Trending</a></li>
+                    <li class="nav-item"><a class="nav-link" href="genre.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--carousel-->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/dune.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>DUNE </h5>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut rerum officiis laudantium impedit .</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/shadow.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>SHADOW</h5>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut rerum officiis laudantium impedit .</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/wicked.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>WICKED</h5>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut rerum officiis laudantium impedit .</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!--top fantasy-->
+    <div class="container-fluid text-center trending " style="margin-top: 35px;">
+        <h2 class="trending-title">Top Fantasy</h2>
+        <div class="row justify-content-center mt-5">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 ">
+                <div class="movie-card">
+                    <span class="number">1</span>
+                    <img src="img/fantasy.jpg" alt="Movie 1">
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="movie-card">
+                    <span class="number">2</span>
+                    <img src="img/doctor.jpg" alt="Movie 2">
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="movie-card">
+                    <span class="number">3</span>
+                    <img src="img/witcher.jpg" alt="Movie 3">
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="movie-card">
+                    <span class="number">4</span>
+                    <img src="img/oz.jpeg" alt="Movie 4">
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="movie-card">
+                    <span class="number">5</span>
+                    <img src="img/lor.jpeg" alt="Movie 5">
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="movie-card">
+                    <span class="number">6</span>
+                    <img src="img/newmoon.jpg" alt="Movie 6">
+                </div>
+            </div>
+           
+            </div>
+        </div>
+    <!-- next watch -->
+    <div class="container mt-4">
+        <div class="title">Your Next Watch</div>
+        <div class="row g-3">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+                <div class="movie">
+                    <img src="img/18.jpg" alt="Movie Thumbnail">
+                    <div class="info">
+                        <h5>Back in Action</h5>
+                        <p><span style="color: green; font-weight: bold;">82% Match</span> | U/A 13+ | 1h 54m | HD</p>
+                        <p>Action • Comedy</p>
+                        <div class="actions">
+                            <i class="fa-solid fa-play"></i>
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-heart like-btn" onclick="toggleLike(this)"></i>
+
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+                <div class="movie">
+                    <img src="img/14.jpg" alt="Movie Thumbnail">
+                    <div class="info">
+                        <h5>Movie </h5>
+                        <p><span style="color: green; font-weight: bold;">78% Match</span> | U/A 16+ | 2h 10m | HD</p>
+                        <p>Thriller • Drama</p>
+                        <div class="actions">
+                            <i class="fa-solid fa-play"></i>
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-heart like-btn" onclick="toggleLike(this)"></i>
+
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+                <div class="movie">
+                    <img src="img/jhon-wick.jpg" alt="Movie Thumbnail">
+                    <div class="info">
+                        <h5> Action Movie</h5>
+                        <p><span style="color: green; font-weight: bold;">90% Match</span> | U/A 18+ | 1h 40m | HD</p>
+                        <p>Horror • Mystery</p>
+                        <div class="actions">
+                            <a href="movie.html"><i class="fa-solid fa-play"></i></a>
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-heart like-btn" onclick="toggleLike(this)"></i>
+
+                            <a href="Johnwick.html"> <i class="fa-solid fa-angle-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+                <div class="movie">
+                    <img src="img/hunger.jpeg" alt="Movie Thumbnail">
+                    <div class="info">
+                        <h5>Classic Hit</h5>
+                        <p><span style="color: green; font-weight: bold;">85% Match</span> | U/A 7+ | 1h 20m | HD</p>
+                        <p>Family • Animation</p>
+                        <div class="actions">
+                            <i class="fa-solid fa-play"></i>
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-heart like-btn" onclick="toggleLike(this)"></i>
+
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+                <div class="movie">
+                    <img src="img/stranger.jpg" alt="Movie Thumbnail">
+                    <div class="info">
+                        <h5>Superhero Saga</h5>
+                        <p><span style="color: green; font-weight: bold;">88% Match</span> | U/A 13+ | 2h 30m | HD</p>
+                        <p>Action • Sci-Fi</p>
+                        <div class="actions">
+                            <i class="fa-solid fa-play"></i>
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-heart like-btn" onclick="toggleLike(this)"></i>
+
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+                <div class="movie">
+                    <img src="img/oppenheimer.webp" alt="Movie Thumbnail">
+                    <div class="info">
+                        <h5>Final Showdown</h5>
+                        <p><span style="color: green; font-weight: bold;">80% Match</span> | U/A 12+ | 2h 5m | HD</p>
+                        <p>Action • Thriller</p>
+                        <div class="actions">
+                            <i class="fa-solid fa-play"></i>
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-heart like-btn" onclick="toggleLike(this)"></i>
+
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <!-- only on -->
+    <div class="container mt-4">
+        <div class="title">Only on Magnemite</div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-2 position-relative">
+                <div class="card">
+                    <img src="img/15.jpg" alt="Movie">    <div class="arrow-icon">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <span class="tag">Recently Added</span>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2">
+                <div class="card"><img src="img/5.jpg" alt="Movie">    <div class="arrow-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div></div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2">
+                <div class="card"><img src="img/adam.jpg" alt="Movie">    <div class="arrow-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div></div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2">
+                <div class="card"><img src="img/9.jpg" alt="Movie">    <div class="arrow-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div></div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2">
+                <div class="card"><img src="img/13.jpg" alt="Movie">    <div class="arrow-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div></div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2">
+                <div class="card"><img src="img/11.jpg" alt="Movie">    <div class="arrow-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div></div>
+            </div>
+        </div>
+    </div>
+      
+            <!--Top picks-->
+<div class="container-fluid text-center trending">
+    <h2 class="trending-title">Top Picks</h2>
+    <div class="row justify-content-center">
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="movie-card">
+                <span class="number">1</span>
+                <img src="img/monstercall.jpg" alt="Movie 1">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="movie-card">
+                <span class="number">2</span>
+                <img src="img/bell.jpg" alt="Movie 2">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="movie-card">
+                <span class="number">3</span>
+                <img src="img/joker.jpg" alt="Movie 3">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="movie-card">
+                <span class="number">4</span>
+                <img src="img/harry.jpg" alt="Movie 4">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="movie-card">
+                <span class="number">5</span>
+                <img src="img/lalaland.jpg" alt="Movie 5">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <div class="movie-card">
+                <span class="number">6</span>
+                <img src="img/godfather.jpeg" alt="Movie 6">
+            </div>
+        </div>
+       
+        </div>
+    </div>
+      <!-- physco -->
+    <div class="container mt-4">
+        <div class="title">Psychological Thriller</div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-2 position-relative">
+                <div class="card">
+                    <img src="img/wicked.jpg" alt="Movie">    <div class="arrow-icon">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <span class="tag">Recently Added</span>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2">
+                <div class="card"><img src="img/shadow.jpg" alt="Movie">    <div class="arrow-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div></div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2">
+                <div class="card"><img src="img/money.webp" alt="Movie">    <div class="arrow-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div></div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2">
+                <div class="card"><img src="img/dandd.jpg" alt="Movie">    <div class="arrow-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div><span class="tag">Recently
+                        Added</span></div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2">
+                <div class="card"><img src="img/dune.jpg" alt="Movie">    <div class="arrow-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div></div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2">
+                <div class="card"><img src="img/black.jpg" alt="Movie">    <div class="arrow-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div></div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+<footer class="footer mt-5">
+    <div class="footer-container">
+        
+        <!-- Branding & Logo Inline -->
+        <div class="footer-brand">
+            <h2 style="font-size: 2rem;">
+                <img src="img/favicon-32x32.png" alt="Mangnemite Logo" class="footer-logo text-danger" > MAGNEMITE
+            </h2>
+            <p>Your Ultimate OTT Experience - Watch Anytime, Anywhere.</p>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="footer-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="terms.html">Terms</a>
+            <br> <!-- Moves Privacy to the next line -->
+            <a href="privacy.html">Privacy</a>
+        </nav>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <p class="footer-copy">&copy; 2025 Mangnemite. All rights reserved.</p>
+</footer>
+    <script>
+        function toggleLike(element) {
+            element.classList.toggle("liked");
+        }
+        window.addEventListener("scroll", function () {
+            var navbar = document.getElementById("navbar");
+            if (window.scrollY > 50) {
+                navbar.style.background = "black"; 
+            } else {
+                navbar.style.background = "transparent"; 
+            }
+        });
+    </script>
+
+</body>
+
+</html>

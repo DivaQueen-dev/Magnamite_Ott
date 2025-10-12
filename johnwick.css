@@ -1,0 +1,404 @@
+
+          body {
+            background-color: #141414;
+            color: white;
+            font-family: 'Montserrat', sans-serif !important;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar.transparent {
+            background-color: transparent;
+        }
+
+        .navbar.solid {
+            background-color: black;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .navbar-nav {
+            margin-right: 20px;
+        }
+
+        .nav-item {
+            margin-right: 15px;
+            position: relative;
+        }
+
+        .nav-link {
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: red;
+        }
+
+        .nav-link::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: red;
+            transition: width 0.3s ease;
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+        .dropdown-menu-dark {
+        background-color: #1a1a1a;
+        border: 1px solid #333;
+        margin-top: 8px;
+        padding: 10px 0;
+        min-width: 230px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+    
+    .dropdown-menu-dark .dropdown-item {
+        color: #e5e5e5;
+        padding: 8px 15px;
+        transition: all 0.2s ease;
+    }
+    
+    .dropdown-menu-dark .dropdown-item:hover {
+        background-color: #333;
+        color: #ff0000;
+    }
+    
+    .dropdown-divider {
+        border-top: 1px solid #333;
+        margin: 5px 0;
+    }
+    
+    .user-profile {
+        padding: 10px 15px;
+        cursor: default;
+    }
+    
+    .user-profile:hover {
+        background-color: transparent;
+    }
+    
+    .profile-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+    .profile-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+        .banner {
+            background-image: url(../website/img/john-wick-chapter-4.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 100svh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding-left: 50px;
+            padding-top: 150px;
+
+        }
+
+        .content {
+            text-align: left;
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+        }
+
+        .banner:hover .content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .info {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .stars {
+            color: red;
+        }
+
+        .desc {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: red;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .play {
+            background-color: red;
+            color: white;
+        }
+
+        .details {
+            background-color: white;
+            color: black;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .card {
+            width: 100%;
+            height: 180px;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+            transition: 0.3s ease;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card .arrow-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 0, 0, 0.8);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+
+        .card:hover img {
+            border: 2px solid white;
+          
+        }
+
+        .card:hover .arrow-icon {
+            opacity: 1;
+        }
+
+        .tag {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: red;
+            padding: 5px;
+            font-size: 0.8rem;
+            border-radius: 5px;
+            color: white;
+            z-index: 3;
+        }
+
+        .container {
+            max-width: 95%;
+        }
+
+        .card {
+            margin-bottom: 15px;
+        }
+
+        .movie-link {
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+
+        /* @media (max-width: 768px) {
+            .banner {
+                padding-left: 20px;
+            }
+
+            .content {
+                width: 90%;
+            }
+
+            .title {
+                font-size: 24px;
+            }
+
+            .info {
+                font-size: 14px;
+            }
+
+            .desc {
+                font-size: 12px;
+            }
+
+            .buttons button {
+                font-size: 12px;
+                padding: 8px 15px;
+            }
+        } */
+        /* Keep the hover underline but remove only the dropdown arrow */
+.dropdown-toggle::after {
+    content: "" !important;
+    border: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    vertical-align: 0 !important;
+    margin-left: 0 !important;
+}
+
+/* This ensures the hover effect still works for dropdown items */
+.dropdown-toggle:hover::after {
+    width: 100% !important;
+    height: 2px !important;
+    background: red !important;
+    position: absolute !important;
+    bottom: -3px !important;
+    left: 0 !important;
+}
+
+.footer {
+    background: #0d0d0d;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 40px 0;
+  
+    box-shadow: 0px -2px 15px rgba(255, 255, 255, 0.1);
+  }
+  
+  .footer-container {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  /* Branding & Logo */
+  .footer-brand {
+
+    min-width: 250px;
+    margin-bottom: 15px;
+  }
+  
+  .footer-brand h2 {
+    font-size: 22px;
+    color:#ee394c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between logo and text */
+  }
+  
+  .footer-logo {
+    width: 30px; /* Smaller size for inline look */
+    height: auto;
+  }
+  
+  /* Navigation Links */
+  .footer-links {
+
+    min-width: 250px;
+    margin-bottom: 15px;
+  }
+  
+  .footer-links a {
+    display: inline-block;
+    color: #f1f1f1;
+    text-decoration: none;
+    margin: 8px 12px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color:#dc3545;
+  }
+  
+  /* Social Media Icons */
+  .social-icons {
+
+    min-width: 250px;
+    margin-bottom: 15px;
+  }
+  
+  .social-icons a {
+    display: inline-block;
+    margin: 0 8px;
+    font-size: 20px;
+    color: #f1f1f1;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color:red;
+    transform: scale(1.3);
+  }
+  
+  /* Copyright Section */
+  .footer-copy {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 10px;
+  }
+  

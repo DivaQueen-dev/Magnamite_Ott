@@ -1,0 +1,517 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+body,
+h1,
+h2,
+h3,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button {
+  font-family: 'Montserrat', sans-serif !important;
+}
+/* nav bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar.transparent {
+  background-color: transparent;
+}
+
+.navbar.solid {
+  background-color: black;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar-nav {
+  margin-right: 20px;
+}
+
+.nav-item {
+  margin-right: 15px;
+  position: relative;
+}
+
+.nav-link {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: red;
+}
+
+.nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: red;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+.dropdown-menu-dark {
+background-color: #1a1a1a;
+border: 1px solid #333;
+margin-top: 8px;
+padding: 10px 0;
+min-width: 230px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.dropdown-menu-dark .dropdown-item {
+color: #e5e5e5;
+padding: 8px 15px;
+transition: all 0.2s ease;
+}
+
+.dropdown-menu-dark .dropdown-item:hover {
+background-color: #333;
+color: #ff0000;
+}
+
+.dropdown-divider {
+border-top: 1px solid #333;
+margin: 5px 0;
+}
+
+.user-profile {
+padding: 10px 15px;
+}
+
+.user-profile:hover {
+background-color: transparent;
+}
+
+.profile-avatar {
+width: 40px;
+height: 40px;
+border-radius: 5px;
+overflow: hidden;
+}
+
+.profile-avatar img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+ /* Keep the hover underline but remove only the dropdown arrow */
+ .dropdown-toggle::after {
+  content: "" !important;
+  border: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  vertical-align: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* This ensures the hover effect still works for dropdown items */
+.dropdown-toggle:hover::after {
+  width: 100% !important;
+  height: 2px !important;
+  background: red !important;
+  position: absolute !important;
+  bottom: -3px !important;
+  left: 0 !important;
+}
+h2
+{
+  font-size: 35px !important;
+  font-weight: 50px !important;
+}
+/* video */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* vid matter */
+.content {
+  position: absolute;
+  top: 60%;
+  left: 7%;
+  transform: translateY(-50%);
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  color: white;
+}
+
+.video-container:hover .content {
+  opacity: 1;
+}
+
+.info span {
+  margin-right: 10px;
+}
+
+.stars {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.age {
+  background-color: grey;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.highlight {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.desc {
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.buttons {
+  margin-top: 15px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  color: white;
+}
+
+.play {
+  background-color: #dc3545;
+  color: white;
+}
+
+.details {
+  background-color: grey;
+  color: white;
+}
+
+.play:hover {
+  background-color: darkred;
+}
+
+.details:hover {
+  background-color: black;
+}
+
+/* carousel */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.movie-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.movie-item {
+  min-width: 180px;
+  flex-shrink: 0;
+}
+
+.movie-item img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  display: block;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 10;
+  border: none;
+}
+
+.nav-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-left {
+  left: 20px;
+}
+
+.nav-right {
+  right: 20px;
+}
+
+.carousel-title {
+  font-size: 28px;
+  margin-bottom: 15px;
+  padding: 0 60px;
+  font-weight: normal;
+}
+
+.movie-item {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.movie-item img {
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* data movie */
+
+.movie-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.3s ease-in-out;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  /* Prevents text overflow */
+  white-space: normal;
+  /* Allows text to wrap */
+  height: auto;
+  /* Adjusts height based on content */
+  min-height: 60px;
+  /* Ensures it doesn't collapse */
+}
+
+.movie-item:hover .movie-info {
+  opacity: 1;
+}
+
+
+.movie-title {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.movie-desc {
+  font-size: 0.9em;
+  margin-top: 5px;
+  width: fit-content;
+}
+
+  /* Footer Styling */
+  .footer {
+    background: #0d0d0d;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 40px 0;
+  margin-top: 90px;
+    box-shadow: 0px -2px 15px rgba(255, 255, 255, 0.1);
+  }
+  
+  .footer-container {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  /* Branding & Logo */
+  .footer-brand {
+   
+    min-width: 250px;
+    margin-bottom: 15px;
+  }
+  
+  .footer-brand h2 {
+    font-size: 22px;
+    color:#ee394c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between logo and text */
+  }
+  
+  .footer-logo {
+    width: 30px; /* Smaller size for inline look */
+    height: auto;
+  }
+  
+  /* Navigation Links */
+  .footer-links {
+   
+    min-width: 250px;
+    margin-bottom: 15px;
+  }
+  
+  .footer-links a {
+    display: inline-block;
+    color: #f1f1f1;
+    text-decoration: none;
+    margin: 8px 12px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color:#dc3545;
+  }
+  
+  /* Social Media Icons */
+  .social-icons {
+   
+    min-width: 250px;
+    margin-bottom: 15px;
+  }
+  
+  .social-icons a {
+    display: inline-block;
+    margin: 0 8px;
+    font-size: 20px;
+    color: #f1f1f1;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color:red;
+    transform: scale(1.3);
+  }
+  
+  /* Copyright Section */
+  .footer-copy {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 10px;
+  }
+  .main2 {
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+  }
+  
+  .carousel2 {
+    width: 1000px;
+    height: 400px;
+    position: relative;
+  }
+  
+  .images2 {
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image2 {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    top: 50px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s;
+  }
+  
+  .center2 {
+    width: 260px;
+    height: 360px;
+    top: 20px;
+    z-index: 5;
+  }
+  
+  .image2 img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Navigation Buttons */
+  .nav-buttons2 {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .nav-btn2 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ff0000; /* Red color */
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+  }
