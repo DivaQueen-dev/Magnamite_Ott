@@ -9,11 +9,11 @@ I named **Magnamite** after my **childhood favorite anime, Pokémon**. Though it
 
 ---
 
-## 🚀✨ **Project Overview**  
+##  **Project Overview**  
 Magnamite offers a **visually captivating and fully responsive** OTT experience with:  
-- 🔥 **Intuitive navigation** and smooth transitions.  
-- 🖥️ **Seamless responsiveness** across all devices.  
-- 🎯 **Dynamic interactivity** for enhanced user engagement.  
+-  **Intuitive navigation** and smooth transitions.  
+-  **Seamless responsiveness** across all devices.  
+-  **Dynamic interactivity** for enhanced user engagement.  
 
 🔧 **Tech Stack:**  
 - 💻 **HTML5:** Structured the layout.  
@@ -161,9 +161,9 @@ Magnamite offers a **visually captivating and fully responsive** OTT experience 
 
 ---
 
-## ✨🔥 **Key Takeaway**  
+##  **Key Takeaway**  
 Building **Magnamite** was a rewarding experience that **strengthened my skills** in **HTML, CSS, JavaScript, and Bootstrap**.  
-I’m proud of the **polished design, smooth functionality, and seamless responsiveness**. 💻🔥  
+I’m proud of the **polished design, smooth functionality, and seamless responsiveness**. 
 
 ---
 
