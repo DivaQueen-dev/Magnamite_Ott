@@ -1,7 +1,7 @@
 # Ott-Application-Magnamite-
-"🎬 Magnamite – self-built OTT platform built with HTML, CSS, JS &amp; Bootstrap."
 
-🎥 **Magnamite** is a **next-gen OTT platform** I designed and developed to deliver a sleek, immersive streaming experience.  
+
+🎥 **Magnamite** is a **next-gen OTT platform** designed and developed to deliver a sleek, immersive streaming experience.  
 It features a **cinematic dark-themed interface**, smooth navigation, and responsive design—built with **modern web technologies** to create a **seamless user experience**. 💻✨  
 
 
@@ -22,32 +22,6 @@ Magnamite offers a **visually captivating and fully responsive** OTT experience 
 
 ---
 
-## 🎯🔥 **Key Features**  
-
-✅ 🎨 **Sleek, Dark-Themed UI:**  
-- I created a **cinematic black backdrop** with a stylish gradient banner.  
-- Added **clean typography and subtle hover effects** for a polished look.  
-
-✅ 🖥️ **Fully Responsive Design:**  
-- The platform **adapts flawlessly** to desktops, tablets, and smartphones.  
-- I used **Bootstrap’s grid system** for flexibility and consistency.  
-
-✅ 🌐 **Smooth Navigation:**  
-- I designed a **clean navbar** for easy navigation.  
-- Added **CTA buttons** with hover and click effects to boost interactivity.  
-
-✅ 🎬 **Dynamic Banner Section:**  
-- Eye-catching **gradient CTA banner** for a premium feel.  
-- JavaScript-powered **on-click interactivity** for a smooth UX.  
-
-✅ 🎥 **Custom Animations:**  
-- I implemented **CSS animations** for smooth transitions and hover effects.  
-- This enhances the **overall visual appeal and user experience**.  
-
-✅ 🛠️ **Console Logging for Debugging:**  
-- I used **console logs** during development to test and optimize functionality.  
-
----
 
 ## 📸🔥 **Screenshots – Visual Showcase**  
 
