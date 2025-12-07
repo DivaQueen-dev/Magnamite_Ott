@@ -106,6 +106,8 @@ Magnamite offers a **visually captivating and fully responsive** OTT experience 
 
 ---
 
+## Contributing
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) before making a PR
 
 
 
