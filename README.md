@@ -4,8 +4,7 @@
 🎥 **Magnamite** is a **next-gen OTT platform** I designed and developed to deliver a sleek, immersive streaming experience.  
 It features a **cinematic dark-themed interface**, smooth navigation, and responsive design—built with **modern web technologies** to create a **seamless user experience**. 💻✨  
 
-✅ **Fun Fact:**  
-I named **Magnamite** after my **childhood favorite anime, Pokémon**. Though it has no specific meaning, it reflects my **nostalgic and creative touch**, giving the platform a **unique identity**. 🐾⚡  
+
 
 ---
 
