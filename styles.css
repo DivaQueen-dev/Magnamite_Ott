@@ -22,11 +22,10 @@ button {
 /* nav bar */
 .navbar {
   position: fixed;
-  top: 0;
   width: 100%;
   z-index: 1000;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.6);
 }
 
 .navbar.transparent {
@@ -159,7 +158,7 @@ h2
 
 .video-container video {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
 }
 
@@ -341,8 +340,17 @@ button {
   /* Ensures it doesn't collapse */
 }
 
-.movie-item:hover .movie-info {
-  opacity: 1;
+.movie-item{
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.movie-item:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.7);
 }
 
 
@@ -515,3 +523,15 @@ button {
     color: #fff;
     font-size: 20px;
   }
+
+  .fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
