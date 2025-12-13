@@ -2,7 +2,7 @@
 window.addEventListener("scroll", function() {
   var navbar = document.getElementById("navbar");
   if (window.scrollY > 50) {
-      navbar.style.background = "black"; 
+      navbar.style.background = "rgba(0,0,0,0.6)"; 
   } else {
       navbar.style.background = "transparent"; 
   }
@@ -22,6 +22,21 @@ function setupCarousel(container) {
 
 // Apply carousel setup to all carousels
 document.querySelectorAll('.carousel-container').forEach(setupCarousel);
+
+// 🔍 Search movies
+const searchInput = document.getElementById("searchInput");
+const movies = document.querySelectorAll(".movie-item");
+
+if (searchInput) {
+  searchInput.addEventListener("keyup", () => {
+    const value = searchInput.value.toLowerCase();
+    movies.forEach(movie => {
+      const title = movie.querySelector(".movie-title").innerText.toLowerCase();
+      movie.style.display = title.includes(value) ? "block" : "none";
+    });
+  });
+}
+
 
 //new
 const images2 = document.querySelectorAll('.image2');
@@ -71,3 +86,14 @@ function updateCarousel2() {
     }
   });
 }
+
+// ✨ Fade-in on scroll
+const fadeElements = document.querySelectorAll('.fade-in');
+
+window.addEventListener('scroll', () => {
+  fadeElements.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+      el.classList.add('show');
+    }
+  });
+});
