@@ -13,6 +13,6 @@ Replace lorem ipsum text in movie-desc paragraphs with short, real plot summarie
 - [ ] Verify changes: Check hover effects and layout
 - [ ] Verify responsiveness
 - [ ] Test the site by opening index.html in browser
-- [ ] Added Back to Top Button
-- [ ] Added Gradient Navbar on Scroll
-- [ ] Added Fade-in on Scroll
+- [x] Added Back to Top Button
+- [x] Added Gradient Navbar on Scroll
+- [x] Added Fade-in on Scroll
