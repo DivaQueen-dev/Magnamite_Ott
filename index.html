@@ -57,9 +57,23 @@
     </nav>
 <!--video-->
     <div class="video-container">
-        <video autoplay muted loop>
+        <video autoplay muted loop id="hero-video">
             <source src="vid/jurasic world.webm" type="video/mp4">
         </video>
+        <div class="video-controls" id="video-controls">
+            <button class="control-btn" id="play-pause-btn">
+                <i class="fas fa-pause"></i>
+            </button>
+            <div class="volume-controls">
+                <button class="control-btn" id="mute-btn">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0">
+            </div>
+            <button class="control-btn" id="fullscreen-btn">
+                <i class="fas fa-expand"></i>
+            </button>
+        </div>
         <div class="content">
             <h1 class="title">JURASSIC WORLD</h1>
             <div class="info">
