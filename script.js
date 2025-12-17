@@ -2,11 +2,54 @@
 window.addEventListener("scroll", function() {
   var navbar = document.getElementById("navbar");
   if (window.scrollY > 50) {
-      navbar.style.background = "black"; 
+      navbar.style.background = "black";
   } else {
-      navbar.style.background = "transparent"; 
+      navbar.style.background = "transparent";
   }
 });
+
+// Load movies from JSON and populate carousels
+async function loadMovies() {
+    try {
+        const response = await fetch('movies.json');
+        const data = await response.json();
+
+        // Map carousel titles to JSON keys
+        const titleToKey = {
+            'Featured Movies': 'featuredMovies',
+            'TV Series': 'tvSeries',
+            'Anime': 'anime',
+            'Dubbed': 'dubbed',
+            'Movies': 'movies',
+            'For You': 'forYou'
+        };
+
+        // Populate each carousel
+        document.querySelectorAll('.carousel-container').forEach(container => {
+            const title = container.querySelector('.carousel-title').textContent.trim();
+            const key = titleToKey[title];
+            if (key && data[key]) {
+                const carousel = container.querySelector('.movie-carousel');
+                carousel.innerHTML = ''; // Clear existing content
+                data[key].forEach(movie => {
+                    const movieItem = document.createElement('div');
+                    movieItem.className = 'movie-item';
+                    movieItem.innerHTML = `
+                        <img src="${movie.image}" alt="${movie.title}">
+                        <div class="movie-info">
+                            <h3 class="movie-title">${movie.title}</h3>
+                            <p class="movie-desc">${movie.description}</p>
+                        </div>
+                    `;
+                    carousel.appendChild(movieItem);
+                });
+            }
+        });
+    } catch (error) {
+        console.error('Error loading movies:', error);
+    }
+}
+
 //carousel
 function setupCarousel(container) {
     const carousel = container.querySelector('.movie-carousel');
@@ -20,8 +63,10 @@ function setupCarousel(container) {
     }
 }
 
-// Apply carousel setup to all carousels
-document.querySelectorAll('.carousel-container').forEach(setupCarousel);
+// Load movies and then setup carousels
+loadMovies().then(() => {
+    document.querySelectorAll('.carousel-container').forEach(setupCarousel);
+});
 
 //new
 const images2 = document.querySelectorAll('.image2');

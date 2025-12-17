@@ -1,0 +1,314 @@
+{
+  "featuredMovies": [
+    {
+      "title": "Twilight",
+      "image": "img/twilight.jpg",
+      "description": "A teenage girl moves to a small town and falls in love with a mysterious boy who turns out to be a vampire."
+    },
+    {
+      "title": "John Wick",
+      "image": "img/jhon-wick.jpg",
+      "description": "A retired hitman seeks vengeance against the gangsters who killed his dog and stole his car."
+    },
+    {
+      "title": "Aquaman",
+      "image": "img/17.jpg",
+      "description": "The half-human, half-Atlantean prince must unite his worlds to protect the surface from his brother."
+    },
+    {
+      "title": "Stranger Things",
+      "image": "img/stranger.jpg",
+      "description": "When a boy disappears, his friends uncover supernatural mysteries in their small town."
+    },
+    {
+      "title": "Oppenheimer",
+      "image": "img/oppenheimer.webp",
+      "description": "The story of the American physicist who led the Manhattan Project to develop the atomic bomb."
+    },
+    {
+      "title": "Lord of the Rings",
+      "image": "img/lord.jpg",
+      "description": "A young hobbit embarks on a quest to destroy a powerful ring and defeat the dark lord Sauron."
+    },
+    {
+      "title": "Spider-Man",
+      "image": "img/19.jpg",
+      "description": "A high school student gains spider-like abilities and becomes a superhero to protect his city."
+    },
+    {
+      "title": "Beetlejuice",
+      "image": "img/beetlejuice.jpg",
+      "description": "A recently deceased couple hires a bio-exorcist to help them remove the new owners of their home."
+    },
+    {
+      "title": "Due Date",
+      "image": "img/10.jpg",
+      "description": "Two dads-to-be go on a road trip to make it to the birth of their child on time."
+    },
+    {
+      "title": "The Hangover",
+      "image": "img/12.jpg",
+      "description": "Three friends wake up in Las Vegas with no memory of the previous night and must find the groom."
+    }
+  ],
+  "tvSeries": [
+    {
+      "title": "The Crown",
+      "image": "img/13.jpg",
+      "description": "The story of Queen Elizabeth II and the political rivalries and romance of her reign."
+    },
+    {
+      "title": "Game of Thrones",
+      "image": "img/14.jpg",
+      "description": "Noble families vie for control of the Iron Throne in the Seven Kingdoms of Westeros."
+    },
+    {
+      "title": "The Mandalorian",
+      "image": "img/15.jpg",
+      "description": "A lone bounty hunter navigates the outer reaches of the galaxy far from the authority of the New Republic."
+    },
+    {
+      "title": "The Witcher",
+      "image": "img/16.jpg",
+      "description": "A monster hunter for hire embarks on a journey to find his destiny in a world where people often prove more wicked than beasts."
+    },
+    {
+      "title": "Breaking Bad",
+      "image": "img/17.jpg",
+      "description": "A high school chemistry teacher diagnosed with cancer turns to making and selling methamphetamine to secure his family's future."
+    },
+    {
+      "title": "The Boys",
+      "image": "img/19.jpg",
+      "description": "A group of vigilantes set out to take down corrupt superheroes who abuse their superpowers."
+    },
+    {
+      "title": "Shadow and Bone",
+      "image": "img/shadow.jpg",
+      "description": "A young woman discovers she has a rare power that could change the fate of her war-torn world."
+    },
+    {
+      "title": "The Umbrella Academy",
+      "image": "img/wicked.jpg",
+      "description": "A dysfunctional family of adopted siblings with superpowers reunites to solve the mystery of their father's death."
+    },
+    {
+      "title": "The Shawshank Redemption",
+      "image": "img/10.jpg",
+      "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."
+    },
+    {
+      "title": "Friends",
+      "image": "img/12.jpg",
+      "description": "Follows the personal and professional lives of six friends living in Manhattan."
+    }
+  ],
+  "anime": [
+    {
+      "title": "Attack on Titan",
+      "image": "img/18.jpg",
+      "description": "Humanity fights for survival against giant humanoid Titans that devour humans."
+    },
+    {
+      "title": "One Punch Man",
+      "image": "img/one-punch-man.jpg",
+      "description": "A superhero who can defeat any opponent with a single punch trains to become stronger."
+    },
+    {
+      "title": "Jujutsu Kaisen",
+      "image": "img/jujutsu.jpeg",
+      "description": "A high school student joins a secret organization of sorcerers to fight cursed spirits."
+    },
+    {
+      "title": "Spy x Family",
+      "image": "img/spy-x-family.webp",
+      "description": "A spy forms a fake family with a telepathic girl and a superhuman assassin."
+    },
+    {
+      "title": "Naruto",
+      "image": "img/11.jpg",
+      "description": "A young ninja dreams of becoming the strongest ninja and leader of his village."
+    },
+    {
+      "title": "Death Note",
+      "image": "img/12.jpg",
+      "description": "A student discovers a supernatural notebook that allows him to kill anyone by writing their name."
+    },
+    {
+      "title": "My Hero Academia",
+      "image": "img/19.jpg",
+      "description": "In a world where superpowers are common, a boy without powers dreams of becoming a hero."
+    },
+    {
+      "title": "Demon Slayer",
+      "image": "img/15.jpg",
+      "description": "A young boy becomes a demon slayer to avenge his family and cure his sister."
+    },
+    {
+      "title": "Fullmetal Alchemist",
+      "image": "img/10.jpg",
+      "description": "Two brothers use alchemy to restore their bodies after a failed experiment."
+    },
+    {
+      "title": "Dragon Ball",
+      "image": "img/7.jpg",
+      "description": "A young warrior embarks on a quest to collect seven magical orbs to summon a dragon."
+    }
+  ],
+  "dubbed": [
+    {
+      "title": "Lord of the Rings",
+      "image": "img/lord.jpg",
+      "description": "A young hobbit embarks on a quest to destroy a powerful ring and defeat the dark lord Sauron."
+    },
+    {
+      "title": "Spider-Man",
+      "image": "img/19.jpg",
+      "description": "A high school student gains spider-like abilities and becomes a superhero to protect his city."
+    },
+    {
+      "title": "Beetlejuice",
+      "image": "img/beetlejuice.jpg",
+      "description": "A recently deceased couple hires a bio-exorcist to help them remove the new owners of their home."
+    },
+    {
+      "title": "Due Date",
+      "image": "img/10.jpg",
+      "description": "Two dads-to-be go on a road trip to make it to the birth of their child on time."
+    },
+    {
+      "title": "The Hangover",
+      "image": "img/12.jpg",
+      "description": "Three friends wake up in Las Vegas with no memory of the previous night and must find the groom."
+    },
+    {
+      "title": "Inception",
+      "image": "img/18.jpg",
+      "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O."
+    },
+    {
+      "title": "Wonka",
+      "image": "img/wonka.jpeg",
+      "description": "A young Willy Wonka embarks on a magical adventure to find his destiny in the extraordinary world of candy."
+    },
+    {
+      "title": "The Hunger Games",
+      "image": "img/hunger.jpeg",
+      "description": "In a dystopian future, teenagers are forced to fight to the death in a televised event called the Hunger Games."
+    },
+    {
+      "title": "Stranger Things",
+      "image": "img/stranger.jpg",
+      "description": "When a boy disappears, his friends uncover supernatural mysteries in their small town."
+    },
+    {
+      "title": "Oppenheimer",
+      "image": "img/oppenheimer.webp",
+      "description": "The story of the American physicist who led the Manhattan Project to develop the atomic bomb."
+    }
+  ],
+  "movies": [
+    {
+      "title": "Inception",
+      "image": "img/18.jpg",
+      "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O."
+    },
+    {
+      "title": "Wonka",
+      "image": "img/wonka.jpeg",
+      "description": "A young Willy Wonka embarks on a magical adventure to find his destiny in the extraordinary world of candy."
+    },
+    {
+      "title": "The Hunger Games",
+      "image": "img/hunger.jpeg",
+      "description": "In a dystopian future, teenagers are forced to fight to the death in a televised event called the Hunger Games."
+    },
+    {
+      "title": "Stranger Things",
+      "image": "img/stranger.jpg",
+      "description": "When a boy disappears, his friends uncover supernatural mysteries in their small town."
+    },
+    {
+      "title": "Oppenheimer",
+      "image": "img/oppenheimer.webp",
+      "description": "The story of the American physicist who led the Manhattan Project to develop the atomic bomb."
+    },
+    {
+      "title": "Lord of the Rings",
+      "image": "img/lord.jpg",
+      "description": "A young hobbit embarks on a quest to destroy a powerful ring and defeat the dark lord Sauron."
+    },
+    {
+      "title": "Spider-Man",
+      "image": "img/19.jpg",
+      "description": "A high school student gains spider-like abilities and becomes a superhero to protect his city."
+    },
+    {
+      "title": "Beetlejuice",
+      "image": "img/beetlejuice.jpg",
+      "description": "A recently deceased couple hires a bio-exorcist to help them remove the new owners of their home."
+    },
+    {
+      "title": "Due Date",
+      "image": "img/10.jpg",
+      "description": "Two dads-to-be go on a road trip to make it to the birth of their child on time."
+    },
+    {
+      "title": "The Hangover",
+      "image": "img/12.jpg",
+      "description": "Three friends wake up in Las Vegas with no memory of the previous night and must find the groom."
+    }
+  ],
+  "forYou": [
+    {
+      "title": "The Wolf of Wall Street",
+      "image": "img/money.webp",
+      "description": "Based on the true story of Jordan Belfort, from his rise to a wealthy stockbroker living the high life to his fall involving crime, corruption and the federal government."
+    },
+    {
+      "title": "Dune",
+      "image": "img/dune.jpg",
+      "description": "A noble family becomes embroiled in a war for control over the galaxy's most valuable asset while its heir becomes troubled by visions of a dark future."
+    },
+    {
+      "title": "One Punch Man",
+      "image": "img/one-punch-man.jpg",
+      "description": "A superhero who can defeat any opponent with a single punch trains to become stronger."
+    },
+    {
+      "title": "Interstellar",
+      "image": "img/5.jpg",
+      "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival."
+    },
+    {
+      "title": "The Dark Knight",
+      "image": "img/8.jpg",
+      "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice."
+    },
+    {
+      "title": "Lord of the Rings",
+      "image": "img/lord.jpg",
+      "description": "A young hobbit embarks on a quest to destroy a powerful ring and defeat the dark lord Sauron."
+    },
+    {
+      "title": "Spider-Man",
+      "image": "img/19.jpg",
+      "description": "A high school student gains spider-like abilities and becomes a superhero to protect his city."
+    },
+    {
+      "title": "Beetlejuice",
+      "image": "img/beetlejuice.jpg",
+      "description": "A recently deceased couple hires a bio-exorcist to help them remove the new owners of their home."
+    },
+    {
+      "title": "Due Date",
+      "image": "img/10.jpg",
+      "description": "Two dads-to-be go on a road trip to make it to the birth of their child on time."
+    },
+    {
+      "title": "The Hangover",
+      "image": "img/12.jpg",
+      "description": "Three friends wake up in Las Vegas with no memory of the previous night and must find the groom."
+    }
+  ]
+}
