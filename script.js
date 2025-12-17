@@ -71,3 +71,33 @@ function updateCarousel2() {
     }
   });
 }
+
+
+const toggleBtn = document.getElementById("theme-toggle");
+const icon = toggleBtn.querySelector("i");
+
+const savedTheme = localStorage.getItem("theme");
+
+
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-theme");
+  icon.classList.replace("fa-moon", "fa-sun");
+  toggleBtn.setAttribute("aria-pressed", "true");
+}
+
+toggleBtn.addEventListener("click", () => {
+  const isDark = document.body.classList.toggle("dark-theme");
+
+  if (isDark) {
+    icon.classList.replace("fa-moon", "fa-sun");
+    localStorage.setItem("theme", "dark");
+    toggleBtn.setAttribute("aria-pressed", "true");
+  } else {
+    icon.classList.replace("fa-sun", "fa-moon");
+    localStorage.setItem("theme", "light");
+    toggleBtn.setAttribute("aria-pressed", "false");
+  }
+});
+
+
+
