@@ -15,8 +15,25 @@ function setupCarousel(container) {
 
     if (carousel && leftArrow && rightArrow) {
         const scrollAmount = 500;
-        rightArrow.onclick = () => carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        leftArrow.onclick = () => carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        const scrollLeft = () => carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        const scrollRight = () => carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+
+        rightArrow.onclick = scrollRight;
+        leftArrow.onclick = scrollLeft;
+
+        // Keyboard navigation
+        carousel.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                scrollLeft();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                scrollRight();
+            }
+        });
+
+        // Make carousel focusable
+        carousel.setAttribute('tabindex', '0');
     }
 }
 
@@ -40,16 +57,30 @@ const positions2 = [
 
 updateCarousel2();
 
-nextBtn2.addEventListener('click', function() {
+const nextCarousel2 = () => {
   position2++;
   if (position2 >= images2.length) position2 = 0;
   updateCarousel2();
-});
+};
 
-prevBtn2.addEventListener('click', function() {
+const prevCarousel2 = () => {
   position2--;
   if (position2 < 0) position2 = images2.length - 1;
   updateCarousel2();
+};
+
+nextBtn2.addEventListener('click', nextCarousel2);
+prevBtn2.addEventListener('click', prevCarousel2);
+
+// Keyboard navigation for top tier carousel
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') {
+    e.preventDefault();
+    prevCarousel2();
+  } else if (e.key === 'ArrowRight') {
+    e.preventDefault();
+    nextCarousel2();
+  }
 });
 
 function updateCarousel2() {
