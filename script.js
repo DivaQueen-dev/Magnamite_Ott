@@ -2,7 +2,7 @@
 window.addEventListener("scroll", function() {
   var navbar = document.getElementById("navbar");
   if (window.scrollY > 50) {
-      navbar.style.background = "black";
+      navbar.style.background = "linear-gradient(90deg, rgba(0,0,0,0.9), rgba(20,20,20,0.9))" ; 
   } else {
       navbar.style.background = "transparent";
   }
@@ -157,32 +157,46 @@ function updateCarousel2() {
   });
 }
 
+// Fade-in on scroll
+document.addEventListener('DOMContentLoaded', () => {
+  const fadeElements = document.querySelectorAll('.fade-in');
 
-const toggleBtn = document.getElementById("theme-toggle");
-const icon = toggleBtn.querySelector("i");
+  const fadeObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Optional: stop observing after it fades in
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
 
-const savedTheme = localStorage.getItem("theme");
-
-
-if (savedTheme === "dark") {
-  document.body.classList.add("dark-theme");
-  icon.classList.replace("fa-moon", "fa-sun");
-  toggleBtn.setAttribute("aria-pressed", "true");
-}
-
-toggleBtn.addEventListener("click", () => {
-  const isDark = document.body.classList.toggle("dark-theme");
-
-  if (isDark) {
-    icon.classList.replace("fa-moon", "fa-sun");
-    localStorage.setItem("theme", "dark");
-    toggleBtn.setAttribute("aria-pressed", "true");
-  } else {
-    icon.classList.replace("fa-sun", "fa-moon");
-    localStorage.setItem("theme", "light");
-    toggleBtn.setAttribute("aria-pressed", "false");
-  }
+  fadeElements.forEach(el => fadeObserver.observe(el));
 });
 
 
+// Back to top button
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTop = document.getElementById("backToTop");
+
+  if (!backToTop) return; // prevents JS error
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      backToTop.style.display = "block";
+    } else {
+      backToTop.style.display = "none";
+    }
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+});
 

@@ -28,8 +28,9 @@ button {
   width: 100%;
   z-index: 1000;
   padding: 10px 20px;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
 }
+
 
 .navbar.transparent {
   background-color: transparent;
@@ -518,54 +519,36 @@ button {
     font-size: 20px;
   }
 
-/* toggle button */
-body,
-.navbar,
-.nav-link,
-.dropdown-menu {
-  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Fade-in on scroll */
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.navbar {
-  background-color: rgba(255, 255, 255, 0.9) !important;
+.fade-in.hidden {
+  opacity: 0;
+  transform: translateY(30px);
 }
 
-.nav-link {
-  color: #111111 !important;
-}
 
-.nav-link:hover {
-  color: #dc3545 !important;
-}
-
-.dark-theme {
-  background-color: #121212;
-  color: #f5f5f5;
-}
-
-.dark-theme .navbar {
-  background-color: rgba(0, 0, 0, 0.95) !important;
-}
-
-.dark-theme .nav-link {
-  color: #ffffff !important;
-}
-
-.dark-theme .nav-link:hover {
-  color: #dc3545 !important;
-}
-
-.dark-theme .dropdown-menu {
-  background-color: #1e1e1e;
-}
-
-.theme-toggle {
-  background-color: #f1f1f1;
-  color: #111;
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
+  background: #dc3545;
+  color: white;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  display: none; /* IMPORTANT */
+  z-index: 9999;
 }
 
-.dark-theme .theme-toggle {
-  background-color: #1f1f1f;
-  color: #ffffff;
+#backToTop:hover {
+  background: darkred;
 }
