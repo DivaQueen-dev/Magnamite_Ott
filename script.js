@@ -184,5 +184,54 @@ toggleBtn.addEventListener("click", () => {
   }
 });
 
+// Fade-in on scroll
+const fadeElements = document.querySelectorAll(".fade-in");
+
+const fadeObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+fadeElements.forEach(el => fadeObserver.observe(el));
+
+// Back to top button
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTopBtn = document.getElementById("backToTop");
+
+  if (!backToTopBtn) {
+    console.error("Back to top button not found");
+    return;
+  }
+
+  window.addEventListener("scroll", () => {
+    backToTopBtn.style.display =
+      window.scrollY > 300 ? "block" : "none";
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+
+
+// Navbar gradient on scroll
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 80) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
+
+
 
 
