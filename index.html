@@ -15,7 +15,7 @@
 <body>
     
     <!--nav bar-->
-    <nav class="navbar navbar-expand-lg transparent" id="navbar">
+    <nav class="navbar navbar-expand-lg" id="navbar">
         <div class="container">
             <a class="navbar-brand text-danger fw-bold" href="#"style="font-size: 25px;">MAGNEMITE</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -30,7 +30,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Profiles
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="profileDropdown">
+                        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
                             <li class="dropdown-item user-profile">
                                 <div class="d-flex align-items-center">
                                     <div class="profile-avatar">
@@ -51,15 +51,38 @@
                     <li class="nav-item"><a class="nav-link" href="Trending.html">Trending</a></li>
                     <li class="nav-item"><a class="nav-link" href="genre.html"><i class="fa-solid fa-magnifying-glass"></i></a>
                     </li>
+                  <li class="nav-item ms-2">
+                <button
+                     id="theme-toggle"
+                     class="btn btn-sm theme-toggle p-1"
+                     aria-label="Toggle dark mode"
+                     aria-pressed="false">
+                     <i class="fa-solid fa-moon"></i>
+                </button>
+                  </li>
                 </ul>
             </div>
         </div>
     </nav>
 <!--video-->
     <div class="video-container">
-        <video autoplay muted loop>
+        <video autoplay muted loop id="hero-video">
             <source src="vid/jurasic world.webm" type="video/mp4">
         </video>
+        <div class="video-controls" id="video-controls">
+            <button class="control-btn" id="play-pause-btn">
+                <i class="fas fa-pause"></i>
+            </button>
+            <div class="volume-controls">
+                <button class="control-btn" id="mute-btn">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0">
+            </div>
+            <button class="control-btn" id="fullscreen-btn">
+                <i class="fas fa-expand"></i>
+            </button>
+        </div>
         <div class="content">
             <h1 class="title">JURASSIC WORLD</h1>
             <div class="info">
