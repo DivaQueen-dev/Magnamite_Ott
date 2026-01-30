@@ -8,90 +8,48 @@ window.addEventListener("scroll", function() {
   }
 });
 
-// Video Controls
-const video = document.getElementById('hero-video');
-const playPauseBtn = document.getElementById('play-pause-btn');
-const muteBtn = document.getElementById('mute-btn');
-const volumeSlider = document.getElementById('volume-slider');
-const fullscreenBtn = document.getElementById('fullscreen-btn');
-const videoControls = document.getElementById('video-controls');
+// Load movies from JSON and populate carousels
+async function loadMovies() {
+    try {
+        const response = await fetch('movies.json');
+        const data = await response.json();
 
-// Play/Pause functionality
-playPauseBtn.addEventListener('click', () => {
-  if (video.paused) {
-    video.play();
-    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
-  } else {
-    video.pause();
-    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
-  }
-});
+        // Map carousel titles to JSON keys
+        const titleToKey = {
+            'Featured Movies': 'featuredMovies',
+            'TV Series': 'tvSeries',
+            'Anime': 'anime',
+            'Dubbed': 'dubbed',
+            'Movies': 'movies',
+            'For You': 'forYou'
+        };
 
-// Mute/Unmute functionality
-muteBtn.addEventListener('click', () => {
-  if (video.muted) {
-    video.muted = false;
-    muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-    volumeSlider.value = video.volume;
-  } else {
-    video.muted = true;
-    muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-    volumeSlider.value = 0;
-  }
-});
-
-// Volume slider functionality
-volumeSlider.addEventListener('input', () => {
-  video.volume = volumeSlider.value;
-  if (video.volume === 0) {
-    muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-  } else {
-    muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-  }
-  video.muted = false;
-});
-
-// Fullscreen functionality
-fullscreenBtn.addEventListener('click', () => {
-  if (!document.fullscreenElement) {
-    video.requestFullscreen().catch(err => {
-      console.log(`Error attempting to enable fullscreen: ${err.message}`);
-    });
-  } else {
-    document.exitFullscreen();
-  }
-});
-
-// Show controls on video interaction (for mobile)
-video.addEventListener('touchstart', () => {
-  videoControls.style.opacity = '1';
-  setTimeout(() => {
-    videoControls.style.opacity = '0';
-  }, 3000);
-});
-
-// Hide controls when video is playing and mouse is not hovering
-let hideControlsTimeout;
-function hideControls() {
-  if (!video.paused) {
-    hideControlsTimeout = setTimeout(() => {
-      videoControls.style.opacity = '0';
-    }, 3000);
-  }
+        // Populate each carousel
+        document.querySelectorAll('.carousel-container').forEach(container => {
+            const title = container.querySelector('.carousel-title').textContent.trim();
+            const key = titleToKey[title];
+            if (key && data[key]) {
+                const carousel = container.querySelector('.movie-carousel');
+                carousel.innerHTML = ''; // Clear existing content
+                data[key].forEach(movie => {
+                    const movieItem = document.createElement('div');
+                    movieItem.className = 'movie-item';
+                    movieItem.innerHTML = `
+                        <img src="${movie.image}" alt="${movie.title}">
+                        <div class="movie-info">
+                            <h3 class="movie-title">${movie.title}</h3>
+                            <p class="movie-desc">${movie.description}</p>
+                        </div>
+                    `;
+                    carousel.appendChild(movieItem);
+                });
+            }
+        });
+    } catch (error) {
+        console.error('Error loading movies:', error);
+    }
 }
 
-video.addEventListener('play', hideControls);
-video.addEventListener('pause', () => {
-  clearTimeout(hideControlsTimeout);
-  videoControls.style.opacity = '1';
-});
-
-video.addEventListener('mouseenter', () => {
-  clearTimeout(hideControlsTimeout);
-  videoControls.style.opacity = '1';
-});
-
-video.addEventListener('mouseleave', hideControls);
 //carousel
 function setupCarousel(container) {
     const carousel = container.querySelector('.movie-carousel');
@@ -105,8 +63,10 @@ function setupCarousel(container) {
     }
 }
 
-// Apply carousel setup to all carousels
-document.querySelectorAll('.carousel-container').forEach(setupCarousel);
+// Load movies and then setup carousels
+loadMovies().then(() => {
+    document.querySelectorAll('.carousel-container').forEach(setupCarousel);
+});
 
 //new
 const images2 = document.querySelectorAll('.image2');
