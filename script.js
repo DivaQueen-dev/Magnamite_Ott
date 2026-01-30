@@ -1,3 +1,142 @@
+// Movie data with genres
+const movies = [
+  { title: "Twilight", genre: ["Romance", "Fantasy"], img: "img/twilight.jpg" },
+  { title: "John Wick", genre: ["Action"], img: "img/jhon-wick.jpg" },
+  { title: "Aquaman", genre: ["Action", "Adventure", "Fantasy"], img: "img/17.jpg" },
+  { title: "Stranger Things", genre: ["Sci-Fi", "Horror"], img: "img/stranger.jpg" },
+  { title: "Oppenheimer", genre: ["Drama", "Biography"], img: "img/oppenheimer.webp" },
+  { title: "Lord of the Rings", genre: ["Fantasy", "Adventure"], img: "img/lord.jpg" },
+  { title: "Spider-Man", genre: ["Action", "Adventure"], img: "img/19.jpg" },
+  { title: "Beetlejuice", genre: ["Comedy", "Fantasy"], img: "img/beetlejuice.jpg" },
+  { title: "Due Date", genre: ["Comedy"], img: "img/10.jpg" },
+  { title: "The Hangover", genre: ["Comedy"], img: "img/12.jpg" },
+  { title: "The Crown", genre: ["Drama", "Biography"], img: "img/13.jpg" },
+  { title: "Game of Thrones", genre: ["Fantasy", "Drama"], img: "img/14.jpg" },
+  { title: "The Mandalorian", genre: ["Sci-Fi", "Action"], img: "img/15.jpg" },
+  { title: "The Witcher", genre: ["Fantasy", "Action"], img: "img/16.jpg" },
+  { title: "Breaking Bad", genre: ["Crime", "Drama"], img: "img/17.jpg" },
+  { title: "The Boys", genre: ["Action", "Sci-Fi"], img: "img/19.jpg" },
+  { title: "Shadow and Bone", genre: ["Fantasy", "Adventure"], img: "img/shadow.jpg" },
+  { title: "The Umbrella Academy", genre: ["Sci-Fi", "Comedy"], img: "img/wicked.jpg" },
+  { title: "The Shawshank Redemption", genre: ["Drama"], img: "img/10.jpg" },
+  { title: "Friends", genre: ["Comedy"], img: "img/12.jpg" },
+  { title: "Attack on Titan", genre: ["Action", "Fantasy"], img: "img/18.jpg" },
+  { title: "One Punch Man", genre: ["Action", "Comedy"], img: "img/one-punch-man.jpg" },
+  { title: "Jujutsu Kaisen", genre: ["Action", "Fantasy"], img: "img/jujutsu.jpeg" },
+  { title: "Spy x Family", genre: ["Comedy", "Action"], img: "img/spy-x-family.webp" },
+  { title: "Naruto", genre: ["Action", "Adventure"], img: "img/11.jpg" },
+  { title: "Death Note", genre: ["Thriller", "Mystery"], img: "img/12.jpg" },
+  { title: "My Hero Academia", genre: ["Action", "Superhero"], img: "img/19.jpg" },
+  { title: "Demon Slayer", genre: ["Action", "Fantasy"], img: "img/15.jpg" },
+  { title: "Fullmetal Alchemist", genre: ["Fantasy", "Adventure"], img: "img/10.jpg" },
+  { title: "Dragon Ball", genre: ["Action", "Adventure"], img: "img/7.jpg" },
+  { title: "Inception", genre: ["Sci-Fi", "Thriller"], img: "img/18.jpg" },
+  { title: "Wonka", genre: ["Fantasy", "Comedy"], img: "img/wonka.jpeg" },
+  { title: "The Hunger Games", genre: ["Action", "Sci-Fi"], img: "img/hunger.jpeg" },
+  { title: "Jurassic World", genre: ["Action", "Adventure"], img: "img/jurasic world.webm" }, // Note: This is a video, but treating as movie
+  { title: "The Wolf of Wall Street", genre: ["Biography", "Crime"], img: "img/money.webp" },
+  { title: "Dune", genre: ["Sci-Fi", "Adventure"], img: "img/dune.jpg" },
+  { title: "Interstellar", genre: ["Sci-Fi", "Drama"], img: "img/5.jpg" },
+  { title: "The Dark Knight", genre: ["Action", "Crime"], img: "img/8.jpg" }
+];
+
+// localStorage functions for watched movies
+function getWatchedMovies() {
+  const watched = localStorage.getItem('watchedMovies');
+  return watched ? JSON.parse(watched) : [];
+}
+
+function saveWatchedMovie(movieTitle) {
+  const watched = getWatchedMovies();
+  if (!watched.includes(movieTitle)) {
+    watched.push(movieTitle);
+    localStorage.setItem('watchedMovies', JSON.stringify(watched));
+  }
+}
+
+// Recommendation logic
+function getRecommendations() {
+  const watched = getWatchedMovies();
+  if (watched.length === 0) {
+    // Fallback for new users: show popular movies
+    return movies.slice(0, 10);
+  }
+
+  const watchedGenres = [];
+  watched.forEach(title => {
+    const movie = movies.find(m => m.title === title);
+    if (movie) {
+      watchedGenres.push(...movie.genre);
+    }
+  });
+
+  // Count genre frequencies
+  const genreCount = {};
+  watchedGenres.forEach(genre => {
+    genreCount[genre] = (genreCount[genre] || 0) + 1;
+  });
+
+  // Sort genres by frequency
+  const sortedGenres = Object.keys(genreCount).sort((a, b) => genreCount[b] - genreCount[a]);
+
+  // Recommend movies based on top genres, excluding watched ones
+  const recommendations = [];
+  sortedGenres.forEach(genre => {
+    const genreMovies = movies.filter(m => m.genre.includes(genre) && !watched.includes(m.title));
+    recommendations.push(...genreMovies);
+  });
+
+  // Remove duplicates and limit to 10
+  const uniqueRecommendations = [];
+  const seen = new Set();
+  recommendations.forEach(movie => {
+    if (!seen.has(movie.title)) {
+      seen.add(movie.title);
+      uniqueRecommendations.push(movie);
+    }
+  });
+
+  return uniqueRecommendations.slice(0, 10);
+}
+
+// Function to update "For You" carousel
+function updateForYouCarousel() {
+  const recommendations = getRecommendations();
+  const forYouContainer = document.querySelector('.carousel-container h2[id="for-you"]')?.parentElement;
+  if (!forYouContainer) return;
+
+  const carousel = forYouContainer.querySelector('.movie-carousel');
+  if (!carousel) return;
+
+  carousel.innerHTML = ''; // Clear existing
+
+  recommendations.forEach(movie => {
+    const movieItem = document.createElement('div');
+    movieItem.className = 'movie-item';
+    movieItem.innerHTML = `
+      <img src="${movie.img}" alt="${movie.title}">
+      <div class="movie-info">
+        <h3 class="movie-title">${movie.title}</h3>
+        <p class="movie-desc">Genres: ${movie.genre.join(', ')}</p>
+        <button class="mark-watched-btn" data-title="${movie.title}">Mark as Watched</button>
+      </div>
+    `;
+    carousel.appendChild(movieItem);
+  });
+
+  // Add event listeners to new buttons
+  carousel.querySelectorAll('.mark-watched-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const title = this.getAttribute('data-title');
+      saveWatchedMovie(title);
+      this.textContent = 'Watched';
+      this.disabled = true;
+      // Update recommendations after marking as watched
+      setTimeout(updateForYouCarousel, 100);
+    });
+  });
+}
+
 //nav bar
 window.addEventListener("scroll", function() {
   var navbar = document.getElementById("navbar");
@@ -139,15 +278,15 @@ prevBtn2.addEventListener('click', function() {
 
 function updateCarousel2() {
   images2.forEach(img => img.classList.remove('center2'));
-  
+
   images2.forEach((img, index) => {
     let pos = (index - position2) % images2.length;
     if (pos < 0) pos += images2.length;
-    
+
     if (pos >= 0 && pos <= 4) {
       img.style.display = 'block';
       img.style.transform = `translateX(${positions2[pos].x}px) rotateY(${positions2[pos].rotate}deg)`;
-      
+
       if (pos === 2) {
         img.classList.add('center2');
       }
@@ -157,32 +296,36 @@ function updateCarousel2() {
   });
 }
 
+// Function to add "Mark as Watched" buttons to all movie items
+function addWatchedButtons() {
+  document.querySelectorAll('.movie-item').forEach(item => {
+    const img = item.querySelector('img');
+    const info = item.querySelector('.movie-info');
+    if (img && info && !info.querySelector('.mark-watched-btn')) {
+      const title = info.querySelector('.movie-title')?.textContent || img.alt;
+      const btn = document.createElement('button');
+      btn.className = 'mark-watched-btn';
+      btn.setAttribute('data-title', title);
+      btn.textContent = 'Mark as Watched';
+      info.appendChild(btn);
+    }
+  });
 
-const toggleBtn = document.getElementById("theme-toggle");
-const icon = toggleBtn.querySelector("i");
-
-const savedTheme = localStorage.getItem("theme");
-
-
-if (savedTheme === "dark") {
-  document.body.classList.add("dark-theme");
-  icon.classList.replace("fa-moon", "fa-sun");
-  toggleBtn.setAttribute("aria-pressed", "true");
+  // Add event listeners
+  document.querySelectorAll('.mark-watched-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const title = this.getAttribute('data-title');
+      saveWatchedMovie(title);
+      this.textContent = 'Watched';
+      this.disabled = true;
+      // Update recommendations after marking as watched
+      setTimeout(updateForYouCarousel, 100);
+    });
+  });
 }
 
-toggleBtn.addEventListener("click", () => {
-  const isDark = document.body.classList.toggle("dark-theme");
-
-  if (isDark) {
-    icon.classList.replace("fa-moon", "fa-sun");
-    localStorage.setItem("theme", "dark");
-    toggleBtn.setAttribute("aria-pressed", "true");
-  } else {
-    icon.classList.replace("fa-sun", "fa-moon");
-    localStorage.setItem("theme", "light");
-    toggleBtn.setAttribute("aria-pressed", "false");
-  }
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+  addWatchedButtons();
+  updateForYouCarousel();
 });
-
-
-

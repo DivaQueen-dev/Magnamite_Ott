@@ -3,15 +3,12 @@ body {
   padding: 0;
   background-color: black;
   color: white;
-  font-family: 'Montserrat', sans-serif !important;
-  background-color: #ffffff;
-  color: #111111;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body,
 h1,
 h2,
-h3,
 h3,
 h4,
 h5,
@@ -19,7 +16,7 @@ h6,
 p,
 a,
 button {
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: 'Montserrat', sans-serif;
 }
 /* nav bar */
 .navbar {
@@ -518,54 +515,24 @@ button {
     font-size: 20px;
   }
 
-/* toggle button */
-body,
-.navbar,
-.nav-link,
-.dropdown-menu {
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Mark as Watched button */
+.mark-watched-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin-top: 8px;
+  transition: background-color 0.3s ease;
 }
 
-.navbar {
-  background-color: rgba(255, 255, 255, 0.9) !important;
+.mark-watched-btn:hover:not(:disabled) {
+  background-color: darkred;
 }
 
-.nav-link {
-  color: #111111 !important;
-}
-
-.nav-link:hover {
-  color: #dc3545 !important;
-}
-
-.dark-theme {
-  background-color: #121212;
-  color: #f5f5f5;
-}
-
-.dark-theme .navbar {
-  background-color: rgba(0, 0, 0, 0.95) !important;
-}
-
-.dark-theme .nav-link {
-  color: #ffffff !important;
-}
-
-.dark-theme .nav-link:hover {
-  color: #dc3545 !important;
-}
-
-.dark-theme .dropdown-menu {
-  background-color: #1e1e1e;
-}
-
-.theme-toggle {
-  background-color: #f1f1f1;
-  color: #111;
-  border-radius: 50%;
-}
-
-.dark-theme .theme-toggle {
-  background-color: #1f1f1f;
-  color: #ffffff;
+.mark-watched-btn:disabled {
+  background-color: grey;
+  cursor: not-allowed;
 }
