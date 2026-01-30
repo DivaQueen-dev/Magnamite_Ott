@@ -2,11 +2,96 @@
 window.addEventListener("scroll", function() {
   var navbar = document.getElementById("navbar");
   if (window.scrollY > 50) {
-      navbar.style.background = "black"; 
+      navbar.style.background = "black";
   } else {
-      navbar.style.background = "transparent"; 
+      navbar.style.background = "transparent";
   }
 });
+
+// Video Controls
+const video = document.getElementById('hero-video');
+const playPauseBtn = document.getElementById('play-pause-btn');
+const muteBtn = document.getElementById('mute-btn');
+const volumeSlider = document.getElementById('volume-slider');
+const fullscreenBtn = document.getElementById('fullscreen-btn');
+const videoControls = document.getElementById('video-controls');
+
+// Play/Pause functionality
+playPauseBtn.addEventListener('click', () => {
+  if (video.paused) {
+    video.play();
+    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+  } else {
+    video.pause();
+    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+  }
+});
+
+// Mute/Unmute functionality
+muteBtn.addEventListener('click', () => {
+  if (video.muted) {
+    video.muted = false;
+    muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+    volumeSlider.value = video.volume;
+  } else {
+    video.muted = true;
+    muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+    volumeSlider.value = 0;
+  }
+});
+
+// Volume slider functionality
+volumeSlider.addEventListener('input', () => {
+  video.volume = volumeSlider.value;
+  if (video.volume === 0) {
+    muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+  } else {
+    muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+  }
+  video.muted = false;
+});
+
+// Fullscreen functionality
+fullscreenBtn.addEventListener('click', () => {
+  if (!document.fullscreenElement) {
+    video.requestFullscreen().catch(err => {
+      console.log(`Error attempting to enable fullscreen: ${err.message}`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+});
+
+// Show controls on video interaction (for mobile)
+video.addEventListener('touchstart', () => {
+  videoControls.style.opacity = '1';
+  setTimeout(() => {
+    videoControls.style.opacity = '0';
+  }, 3000);
+});
+
+// Hide controls when video is playing and mouse is not hovering
+let hideControlsTimeout;
+function hideControls() {
+  if (!video.paused) {
+    hideControlsTimeout = setTimeout(() => {
+      videoControls.style.opacity = '0';
+    }, 3000);
+  }
+}
+
+video.addEventListener('play', hideControls);
+video.addEventListener('pause', () => {
+  clearTimeout(hideControlsTimeout);
+  videoControls.style.opacity = '1';
+});
+
+video.addEventListener('mouseenter', () => {
+  clearTimeout(hideControlsTimeout);
+  videoControls.style.opacity = '1';
+});
+
+video.addEventListener('mouseleave', hideControls);
 //carousel
 function setupCarousel(container) {
     const carousel = container.querySelector('.movie-carousel');
@@ -71,3 +156,33 @@ function updateCarousel2() {
     }
   });
 }
+
+
+const toggleBtn = document.getElementById("theme-toggle");
+const icon = toggleBtn.querySelector("i");
+
+const savedTheme = localStorage.getItem("theme");
+
+
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-theme");
+  icon.classList.replace("fa-moon", "fa-sun");
+  toggleBtn.setAttribute("aria-pressed", "true");
+}
+
+toggleBtn.addEventListener("click", () => {
+  const isDark = document.body.classList.toggle("dark-theme");
+
+  if (isDark) {
+    icon.classList.replace("fa-moon", "fa-sun");
+    localStorage.setItem("theme", "dark");
+    toggleBtn.setAttribute("aria-pressed", "true");
+  } else {
+    icon.classList.replace("fa-sun", "fa-moon");
+    localStorage.setItem("theme", "light");
+    toggleBtn.setAttribute("aria-pressed", "false");
+  }
+});
+
+
+
